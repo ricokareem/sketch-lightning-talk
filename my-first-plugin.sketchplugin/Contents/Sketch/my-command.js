@@ -104,8 +104,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var sketch__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sketch__WEBPACK_IMPORTED_MODULE_0__);
  // documentation: https://developer.sketchapp.com/reference/api/
 
-/* harmony default export */ __webpack_exports__["default"] = (function () {
-  sketch__WEBPACK_IMPORTED_MODULE_0___default.a.UI.message("It's alive 🙌");
+/* harmony default export */ __webpack_exports__["default"] = (function (context) {
+  var selectedLayers = context.selection;
+  var selectedCount = selectedLayers.length;
+
+  if (selectedCount === 0) {
+    context.document.showMessage('No layers are selected.');
+  } else {
+    context.document.showMessage("".concat(selectedCount, " layers selected."));
+  }
 });
 
 /***/ }),
